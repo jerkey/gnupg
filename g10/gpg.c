@@ -2203,6 +2203,8 @@ main (int argc, char **argv)
 
 	  case aDetachedSign: detached_sig = 1; set_cmd( &cmd, aSign ); break;
 
+
+
 	  case aDecryptFiles: multifile=1; /* fall through */
 	  case aDecrypt: set_cmd( &cmd, aDecrypt); break;
 

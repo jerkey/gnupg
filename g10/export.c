@@ -71,6 +71,8 @@ parse_export_options(char *str,unsigned int *options,int noisy)
        N_("remove as much as possible from key during export")},
       {"export-sexp-format",EXPORT_SEXP_FORMAT, NULL,
        N_("export keys in an S-expression based format")},
+      {"export-blinded",EXPORT_BLINDED, NULL,
+       N_("blind keys before exporting")},
       /* Aliases for backward compatibility */
       {"include-local-sigs",EXPORT_LOCAL_SIGS,NULL,NULL},
       {"include-attributes",EXPORT_ATTRIBUTES,NULL,NULL},
@@ -866,6 +868,15 @@ do_export_stream (ctrl_t ctrl, iobuf_t out, strlist_t users, int secret,
          export-minimal set.  */
       if ((options & EXPORT_CLEAN))
         clean_key (keyblock, opt.verbose, (options&EXPORT_MINIMAL), NULL, NULL);
+
+
+      /* It's a public key export, so do blinding if 
+           requested. TODO not yet implemented */
+
+      if(options&EXPORT_BLINDED) {
+        // blind_key(keyblock,opt.verbose,options);
+      }
+
 
       /* And write it. */
       for (kbctx=NULL; (node = walk_kbnode (keyblock, &kbctx, 0)); )

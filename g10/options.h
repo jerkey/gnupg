@@ -324,6 +324,7 @@ EXTERN_UNLESS_MAIN_MODULE int memory_stat_debug_mode;
 #define EXPORT_MINIMAL                   (1<<4)
 #define EXPORT_CLEAN                     (1<<5)
 #define EXPORT_SEXP_FORMAT               (1<<6)
+#define EXPORT_BLINDED                   (1<<7)
 
 #define LIST_SHOW_PHOTOS                 (1<<0)
 #define LIST_SHOW_POLICY_URLS            (1<<1)
